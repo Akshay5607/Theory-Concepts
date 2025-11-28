@@ -1,0 +1,69 @@
+
+What is SVN (Subversion)?
+SVN stands for Subversion. It is called as SVN because of its commands (its command name svn). 
+It is a centralized version control system. It is an open-source tool for version control.
+
+Components of SVN
+There are two core components of SVN; they are as follows:
+
+SVN server
+SVN client
+
+Repository: A repository is the heart of any version control system. 
+It is the central place where developers store all their work. Repository not only stores files but also the history. 
+Repository is accessed over a network, acting as a server and version control tool acting as a client. 
+Clients can connect to the repository, and then they can store/retrieve their changes to/from repository. 
+By storing changes, a client makes these changes available to other people and by retrieving changes, a client takes other people's changes as a working copy.
+
+Trunk: The trunk is a directory where all the main development happens and is usually checked out by developers to work on the project.
+
+Tags : The tags directory is used to store named snapshots of the project. 
+Tag operation allows to give descriptive and memorable names to specific version in the repository.
+
+For example, LAST_STABLE_CODE_BEFORE_EMAIL_SUPPORT is more memorable than
+
+Repository UUID: 7ceef8cb-3799-40dd-a067-c216ec2e5247 and
+
+Revision: 13
+
+Branches: Branch operation is used to create another line of development. 
+It is useful when you want your development process to fork off into two different directions. 
+For example, when you release version 5.0, you might want to create a branch so that development of 6.0 features can be kept separate from 5.0 bug-fixes.
+
+Working copy: 
+Working copy is a snapshot of the repository. 
+The repository is shared by all the teams, but people do not modify it directly. 
+Instead each developer checks out the working copy. 
+The working copy is a private workplace where developers can do their work remaining isolated from the rest of the team.
+
+Commit changes: 
+Commit is a process of storing changes from private workplace to central server. 
+After commit, changes are made available to all the team. 
+Other developers can retrieve these changes by updating their working copy. 
+Commit is an atomic operation. 
+Either the whole commit succeeds or is rolled back. 
+Users never see half finished commit.
+
+✅ In short: Use svn checkout to get files, svn add and svn commit to save changes, svn update to stay in sync, and svn log to track history.
+
+
+Command			| Purpose										| 	Example Usage
+svn checkout	| Get a working copy from repository			| 	svn checkout https://example.com/svn/repo
+svn add			| Add new files/directories to version control	| 	svn add newfile.txt
+svn commit		| Save changes to repository					| 	svn commit -m "Added new feature"
+svn update		| Sync working copy with repository				| 	svn update
+svn status		| Show status of files							| 	svn status
+svn diff		| Show differences between local and repo		| 	svn diff file.txt
+svn log			| View commit history							| 	svn log
+svn revert		| Undo local changes							| 	svn revert file.txt
+svn delete		| Remove files/directories from repo			| 	svn delete oldfile.txt
+svn list		| List files in repository						| 	svn list https://example.com/svn/repo
+
+
+
+📝 Notes
+Always use clear commit messages (-m "message") for tracking changes.
+
+Run svn update frequently to avoid conflicts.
+
+Use svn revert before committing if you want to discard local changes.
